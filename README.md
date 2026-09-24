@@ -107,3 +107,6 @@ El backend acepta peticiones desde:
 
 ## Notas
 El proyecto está preparado para funcionar con el frontend local servido desde el puerto 8080 y la API desde el puerto 3000.
+## Frontend
+Repositorio del frontend: https://github.com/DulceMR17/proyecto-express-tv-perseus-frontend.git
+
