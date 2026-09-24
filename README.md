@@ -68,4 +68,5 @@ El backend crea este usuario al iniciar:
 - Contraseña: `admin123456`
 
 ## Frontend
-Repositorio del frontend: [Agregar aquí el link del repositorio del frontend]
+Repositorio del frontend: https://github.com/DulceMR17/proyecto-express-tv-perseus-frontend.git
+
