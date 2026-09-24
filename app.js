@@ -16,6 +16,11 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5500,http://localhost:8080')
+  .split(',')
+  .map((url) => url.trim())
+  .filter(Boolean);
+
 const swaggerDocument = {
   openapi: '3.0.0',
   info: {
@@ -32,7 +37,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5500',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error('Origen no permitido por CORS'));
+  },
   credentials: true
 }));
 

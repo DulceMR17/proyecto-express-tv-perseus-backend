@@ -1,9 +1,9 @@
 import { ObjectId } from 'mongodb';
-import  databaseInstance  from '../config/database.js';
+import database from '../config/database.js';
 
 export class CategoryModel {
     static getCollection() {
-        const db = getDb();
+        const db = database.getDb();
         return db.collection('categories');
     }
 
